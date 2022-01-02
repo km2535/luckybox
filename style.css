@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "KOTRAHOPE";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #050505;
+}
+.cube {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(20deg);
+  animation: animate 15s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+}
+.cube div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+.top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #121212;
+  transform: rotateX(90deg) translateZ(150px);
+}
+.top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(-400px);
+  background: #ecad00;
+  filter: blur(20px);
+  box-shadow: 0 0 100px #ecad00ee, 0 0 200px #ecad00cc, 0 0 300px #ecad0099,
+    0 0 400px #ecad0055;
+}
+.top span {
+  position: absolute;
+  left: 50px;
+  color: #aa882b;
+  text-shadow: 0 0 15px #ecad00;
+  font-family: "KOTRAHOPE";
+  font-size: 3em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1;
+}
+
+.cube1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./images/bg.png") no-repeat center;
+  background-size: cover;
+  filter: blur(0.5px);
+  transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+}
+.cube1 span:nth-child(odd) {
+  background: url("./images/bg2.png") no-repeat center;
+  filter: blur(0.5px);
+  background-size: 300px 300px;
+}
+.cube2 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#121212, #ecad00);
+  transform: rotateY(calc(90deg * var(--i))) translateZ(149.5px);
+}
